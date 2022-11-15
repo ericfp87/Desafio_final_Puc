@@ -16,8 +16,8 @@ client = boto3.client(
 )
 
 default_args = {
-    'owner': 'Ney',
-    'start_date': datetime(2022, 4, 2)
+    'owner': 'Eric Ferreira',
+    'start_date': datetime(2022, 11, 1)
 }
 
 @dag(default_args=default_args, schedule_interval="@once", description="Executa um job Spark no EMR", catchup=False, tags=['Spark','EMR'])
