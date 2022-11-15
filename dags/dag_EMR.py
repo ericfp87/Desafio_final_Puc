@@ -32,11 +32,11 @@ def indicadores_titanic():
     @task
     def emr_create_cluster():
         cluster_id = client.run_job_flow( # Cria um cluster EMR
-            Name='Automated_EMR_Ney',
+            Name='Automated_EMR_Eric',
             ServiceRole='EMR_DefaultRole',
             JobFlowRole='EMR_EC2_DefaultRole',
             VisibleToAllUsers=True,
-            LogUri='s3://aws-logs-539445819060-us-east-1/elasticmapreduce/',
+            LogUri='s3://aws-logs-444462895540-us-east-1/elasticmapreduce/',
             ReleaseLabel='emr-6.8.0',
             Instances={
                 'InstanceGroups': [
@@ -55,10 +55,10 @@ def indicadores_titanic():
                         'InstanceCount': 1,
                     }
                 ],
-                'Ec2KeyName': 'ney-pucminas-testes',
+                'Ec2KeyName': 'eric-puc-pre',
                 'KeepJobFlowAliveWhenNoSteps': True,
                 'TerminationProtected': False,
-                'Ec2SubnetId': 'subnet-09b06b5d8fc0d0062'
+                'Ec2SubnetId': 'subnet-036df565f101c108f'
             },
 
             Applications=[{'Name': 'Spark'}, {'Name': 'Hive'}],
