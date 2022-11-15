@@ -54,11 +54,7 @@ def indicadores_titanic():
                         'InstanceType': 'm5.xlarge',
                         'InstanceCount': 1,
                     }
-                ],
-                'Ec2KeyName': 'eric-puc-pre',
-                'KeepJobFlowAliveWhenNoSteps': True,
-                'TerminationProtected': False,
-                'Ec2SubnetId': 'subnet-036df565f101c108f'
+                ]
             },
 
             Applications=[{'Name': 'Spark'}, {'Name': 'Hive'}],
@@ -95,7 +91,7 @@ def indicadores_titanic():
                                 '--master', 'yarn',
                                 '--deploy-mode', 'cluster',
                                 '--packages', 'io.delta:delta-core_2.12:2.1.0',
-                                's3://emr-code-539445819060/ney/pyspark/titanic_example_delta.py'
+                                's3://desafiofinal.puc/emr-code/desafiofinal.py'
                                 ]
                     }
                 }
