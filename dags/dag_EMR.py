@@ -6,13 +6,13 @@ import boto3
 
 # aws_access_key_id = Variable.get('aws_access_key_id')
 # aws_secret_access_key = Variable.get('aws_secret_access_key')
-aws_access_key_id = 'AKIAWO7ANSG2J37AL6MO'
-aws_secret_access_key = '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'
+aws_access_key_id = 'AKIAWO7ANSG2FRSONCV2'
+aws_secret_access_key = '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'
 
 client = boto3.client(
     'emr', region_name='us-east-1',
-    aws_access_key_id='AKIAWO7ANSG2J37AL6MO',
-    aws_secret_access_key='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'
+    aws_access_key_id='AKIAWO7ANSG2FRSONCV2',
+    aws_secret_access_key='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'
 )
 
 default_args = {
@@ -61,7 +61,7 @@ def indicadores_titanic():
                 'Ec2SubnetId': 'subnet-003e9e2f8c09cf38e'
             },
 
-            Applications=[{'Name': 'Spark'}, {'Name': 'Hive'}],
+            Applications=[{'Name': 'Spark'}]
         )
         return cluster_id["JobFlowId"]
 
