@@ -4,15 +4,14 @@ from airflow.models import Variable
 from datetime import datetime
 import boto3
 
-# aws_access_key_id = Variable.get('aws_access_key_id')
-# aws_secret_access_key = Variable.get('aws_secret_access_key')
-aws_access_key_id = 'AKIAWO7ANSG2CNUCBSEB'
-aws_secret_access_key = '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'
+aws_access_key_id = Variable.get('aws_access_key_id')
+aws_secret_access_key = Variable.get('aws_secret_access_key')
+
 
 client = boto3.client(
     'emr', region_name='us-east-1',
-    aws_access_key_id='AKIAWO7ANSG2CNUCBSEB',
-    aws_secret_access_key='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'
+    aws_access_key_id=aws_access_key_id,
+    aws_secret_access_key=aws_secret_access_key
 )
 
 default_args = {
@@ -54,7 +53,9 @@ def indicadores_titanic():
                         'InstanceType': 'm5.xlarge',
                         'InstanceCount': 1,
                     }
-                ]
+                ],
+                'KeepJobFlowAliveWhenNoSteps': True,
+                'TerminationProtected': False
             },
 
             Applications=[{'Name': 'Spark'}]
