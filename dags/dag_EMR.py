@@ -54,11 +54,7 @@ def indicadores_titanic():
                         'InstanceType': 'm5.xlarge',
                         'InstanceCount': 1,
                     }
-                ],
-                'Ec2KeyName': 'eric-puc-pre',
-                'KeepJobFlowAliveWhenNoSteps': True,
-                'TerminationProtected': False,
-                'Ec2SubnetId': 'subnet-003e9e2f8c09cf38e'
+                ]
             },
 
             Applications=[{'Name': 'Spark'}]
