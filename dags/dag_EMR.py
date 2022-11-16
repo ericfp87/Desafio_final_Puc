@@ -6,13 +6,13 @@ import boto3
 
 # aws_access_key_id = Variable.get('aws_access_key_id')
 # aws_secret_access_key = Variable.get('aws_secret_access_key')
-aws_access_key_id = 'AKIAWO7ANSG2FRSONCV2'
-aws_secret_access_key = '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'
+aws_access_key_id = 'AKIAWO7ANSG2CNUCBSEB'
+aws_secret_access_key = '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'
 
 client = boto3.client(
     'emr', region_name='us-east-1',
-    aws_access_key_id='AKIAWO7ANSG2FRSONCV2',
-    aws_secret_access_key='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'
+    aws_access_key_id='AKIAWO7ANSG2CNUCBSEB',
+    aws_secret_access_key='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'
 )
 
 default_args = {
